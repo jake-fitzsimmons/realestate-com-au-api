@@ -4,10 +4,11 @@
 
 ## Installation
 
-Using **Python >= 3.6**:
+Using setup.py:
 
+Clone repo and navigate to containing folder and run the install command
 ```bash
-pip install -e git+https://github.com/tomquirk/realestate-com-au-api.git#egg=realestate_com_au_api
+python setup.py install
 ```
 
 ### Example usage
