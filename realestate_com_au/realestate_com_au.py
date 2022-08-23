@@ -66,7 +66,8 @@ class RealestateComAu(Fajita):
         min_land_size=0,
         construction_status=None,  # NEW, ESTABLISHED
         keywords=[],
-        exclude_keywords=[]
+        exclude_keywords=[],
+        sort_type="new-desc"
     ):
         def get_query_variables(page=1):
             query_variables = {
@@ -86,6 +87,10 @@ class RealestateComAu(Fajita):
                     "petsAllowed": pets_allowed,
                 },
             }
+
+            if sort_type:
+                query_variables["sortType"] = sort_type
+
             if (max_price is not None and max_price > -1) or (
                 max_price is not None and min_price > 0
             ):
